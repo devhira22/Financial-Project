@@ -1,0 +1,329 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #174d42;
+  color: white;
+  padding: 10px 60px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: white;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #174d42;
+  border-radius: 50%;
+  font-size: 18px;
+  /* font-weight: bold; */
+}
+
+.brand-light {
+  color: white;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+/* NAVIGATION */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a,
+.nav-links a:visited,
+.nav-links a:active,
+.nav-links a.active,
+.category-btn {
+  text-decoration: none;
+  color: white !important;
+  font-size: 14px;
+  /* font-weight: 300; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* HOVER */
+
+.nav-links a:hover,
+.category-btn:hover {
+  color: white !important;
+}
+
+/* Hover */
+
+.nav-links a:hover,
+.category-btn:hover {
+  color: white;
+}
+/* =========================
+   DROPDOWN
+========================= */
+
+.category-dropdown {
+  position: relative;
+}
+
+.category-btn {
+  padding: 8px 0;
+}
+
+.arrow {
+  font-size: 6px;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.category-menu {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 200px;
+  background: #174d42;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  animation: dropdown .3s ease;
+}
+
+.category-menu a {
+  display: block;
+  padding: 12px 15px;
+  color: white;
+  background: #174d42;
+  font-size: 14px;
+}
+
+.category-menu a:hover {
+  background: #174d42;
+  color: #b8d8ce;
+}
+
+/* =========================
+   DROPDOWN ANIMATION
+========================= */
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   CONTACT BUTTON
+========================= */
+
+.nav-contact {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.nav-contact:hover {
+  color: #b8d8ce;
+  transform: scale(1.05);
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px) {
+
+  .site-header {
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a,
+  .category-btn {
+    font-size: 12px;
+  }
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    padding: 15px 20px;
+  }
+
+  .nav-container {
+    position: relative;
+  }
+
+  .brand-mark {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  /* Hamburger Button */
+
+  .menu-toggle {
+    display: block;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  /* Hide all navigation links */
+
+  .nav-links {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    background: #174d42;
+  }
+
+  /* Show menu only when clicked */
+
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  .nav-links a,
+  .category-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  /* Category Dropdown */
+
+  .category-dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .category-menu {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+    box-shadow: none;
+  }
+
+  .category-menu a {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px) {
+
+  .site-header {
+    padding: 12px 15px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .menu-toggle {
+    font-size: 12px;
+  }
+
+  .nav-links a,
+  .category-btn {
+    font-size: 12px;
+  }
+}
