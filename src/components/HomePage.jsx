@@ -119,9 +119,7 @@ function HomePage() {
   return (
     <div className="moneywise">
 
-      
-
-      {/* HERO SECTION */}
+    {/* HERO SECTION */}
 
       <section className="hero" id="home">
 
